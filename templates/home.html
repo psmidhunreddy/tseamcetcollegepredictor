@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>College Predictor</title>
+</head>
+
+<body>
+    <div class="w-full max-w-md mx-auto ">
+        <header class="bg-indigo-500 text-white text-center py-4 mt-4">
+            <h1 class="text-3xl font-bold">TS Eamcet College Predictor</h1>
+        </header>
+        <div class="bg-white shadow-md rounded  my-6 mx-2">
+            <form action="/result" method="post">
+                <div class="container mx-auto">
+                    <table>
+                        <tr>
+                            <th><label for="rank">EAMCET Rank</label></th>
+                            <td><input type="number" required name="rank" placeholder="rank" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="cat">Select your catogery </label></th>
+                            <td><select name="cat" class="form-select" aria-label="Default select example" required>
+                                    <option selected disabled>Choose your catogery</option>
+                                    <option value="OC BOYS">OC BOYS</option>
+                                    <option value="OC GIRLS">OC GIRLS</option>
+                                    <option value="BC_A BOYS">BC_A BOYS</option>
+                                    <option value="BC_A GIRLS">BC_A GIRLS</option>
+                                    <option value="BC_B BOYS">BC_B BOYS</option>
+                                    <option value="BC_B GIRLS">BC_B GIRLS</option>
+                                    <option value="BC_C BOYS">BC_C BOYS</option>
+                                    <option value="BC_C GIRLS">BC_C GIRLS</option>
+                                    <option value="BC_D BOYS">BC_D BOYS</option>
+                                    <option value="BC_D GIRLS">BC_D GIRLS</option>
+                                    <option value="BC_E BOYS">BC_E BOYS</option>
+                                    <option value="BC_E GIRLS">BC_E GIRLS</option>
+                                    <option value="SC BOYS">SC BOYS</option>
+                                    <option value="SC GIRLS">SC GIRLS</option>
+                                    <option value="ST BOYS">ST BOYS</option>
+                                    <option value="ST GIRLS">ST GIRLS</option>
+                                    <option value="EWS GEN OU">EWS GEN OU</option>
+                                    <option value="EWS GIRLS OU">EWS GIRLS OU</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="any">Preference</label></th>
+                            <td><input type="radio" name="any" value="N" id="N" onclick="fun1();" required>Any Branch<br>
+                                <input type="radio" name="any" value="Y" id="Y" onclick="fun1();">Specific Branch
+                            </td>
+                        </tr>
+                        <script>
+                            function fun1() {
+                                if (document.getElementById('Y').checked) {
+                                    document.getElementById('br').style.display = 'block';
+                                }
+                                else document.getElementById('br').style.display = 'none';
+                            }
+                        </script>
+                    <tr>
+                    <td colspan="2"><div style="display:none" id="br" name="br">
+                        <input type=checkbox name="bcode" value="AGR">AGRICULTURAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="AI">ARTIFICIAL INTELLIGENCE<br>
+                        <input type=checkbox name="bcode" value="AID">ARTIFICIAL INTELLIGENCE AND DATA
+                        SCIENCE<br>
+                        <input type=checkbox name="bcode" value="AIM">ARTIFICIAL INTELLIGENCE AND MACHINE
+                        LEARNING<br>
+                        <input type=checkbox name="bcode" value="ANE">AERONAUTICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="AUT">AUTOMOBILE ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="BIO">BIO-TECHNOLOGY<br>
+                        <input type=checkbox name="bcode" value="BME">BIO-MEDICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="CHE">CHEMICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="CIC">CSE (IoT AND CYBER SECURITY INCLUDING
+                        BLOCK CHAIN
+                        TECHNOLOGY)<br>
+                        <input type=checkbox name="bcode" value="CIV">CIVIL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="CME">COMPUTER ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="CSB">COMPUTER SCIENCE AND BUSINESS SYSTEM<br>
+                        <input type=checkbox name="bcode" value="CSC">COMPUTER SCIENCE AND ENGINEERING (CYBER
+                        SECURITY)<br>
+                        <input type=checkbox name="bcode" value="CSD">COMPUTER SCIENCE AND ENGINEERING (DATA
+                        SCIENCE)<br>
+                        <input type=checkbox name="bcode" value="CSE">COMPUTER SCIENCE AND ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="CSG">COMPUTER SCIENCE & DESIGN<br>
+                        <input type=checkbox name="bcode" value="CSI">COMPUTER SCIENCE AND INFORMATION
+                        TECHNOLOGY<br>
+                        <input type=checkbox name="bcode" value="CSM">COMPUTER SCIENCE AND
+                        ENGINEERING(ARTIFICIAL
+                        INTELLIGENCE AND MACHINE LEARNING)<br>
+                        <input type=checkbox name="bcode" value="CSN">COMPUTER SCIENCE & ENGINEERING
+                        (NETWORKS)<br>
+                        <input type=checkbox name="bcode" value="CSO">COMPUTER SCIENCE AND ENGINEERING (IOT)<br>
+                        <input type=checkbox name="bcode" value="CST">COMPUTER SCIENCE AND TECHNOLOGY<br>
+                        <input type=checkbox name="bcode" value="CSW">COMPUTER ENGINEERING(SOFTWARE
+                        ENGINEERING)<br>
+                        <input type=checkbox name="bcode" value="DRG">DAIRYING<br>
+                        <input type=checkbox name="bcode" value="DTD">DIGITAL TECHNIQUES FOR DESIGN AND
+                        PLANNING<br>
+                        <input type=checkbox name="bcode" value="ECE">ELECTRONICS AND COMMUNICATION
+                        ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="ECI">ELECTRONICS COMMUNICATION AND
+                        INSTRUMENTATION
+                        ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="ECM">ELECTRONICS AND COMPUTER ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="EEE">ELECTRICAL AND ELECTRONICS ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="EIE">ELECTRONICS AND INSTRUMENTATION
+                        ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="ETM">ELECTRONICS AND TELEMATICS<br>
+                        <input type=checkbox name="bcode" value="FDT">FOOD TECHNOLOGY<br>
+                        <input type=checkbox name="bcode" value="FSP">FACILITIES AND SERVICES PLANNING<br>
+                        <input type=checkbox name="bcode" value="INF">INFORMATION TECHNOLOGY<br>
+                        <input type=checkbox name="bcode" value="MCT">MECHANICAL (MECHTRONICS) ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="MEC">MECHANICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="MET">METALLURGICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="MIN">MINING ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="MMS">BTECH MECHANICAL WITH MTECH MANUFACTURING
+                        SYSTEMS<br>
+                        <input type=checkbox name="bcode" value="MMT">METALLURGY AND MATERIAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="MTE">BTECH MECHANICAL WITH MTECH THERMAL
+                        ENGG<br>
+                        <input type=checkbox name="bcode" value="PHE">PHARMACEUTICAL ENGINEERING<br>
+                        <input type=checkbox name="bcode" value="PLG">PLANNING<br>
+                        <input type=checkbox name="bcode" value="TEX">TEXTILE TECHNOLOGY<br>
+                    </div></td>
+                    </tr>
+                        <tr>
+                            <td><button type="reset" class="option-button">Clear</button> </td>
+                            <td><button type="submit" class="option-button">Predict</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+
+        </div>
+        <div class="position-absolute bottom-0 end-0">
+            <div class="m-4">
+                {%with messages = get_flashed_messages(category_filter=["error"]) %}
+                {% if messages %}
+                        <div class="alert alert-danger alert-dismissible fade show">          
+                            {{messages[0]}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                {% endif %}
+                {% endwith %}
+                {%with messages = get_flashed_messages(category_filter=["success"]) %}
+                {% if messages %}
+                        <div class="alert alert-success alert-dismissible fade show">          
+                            {{messages[0]}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        <footer class="bg-indigo-700 text-white text-center py-4">
+            <div class="container mx-auto">
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-2">Note</h2>
+                    <p class="text-md ml-2 mr-2">->Result shown is just to get a rough idea<br>->Ranks are based on 2022
+                        allotment<br>->Data is taken from Internet</p>
+
+
+                </div>
+                <div class="mb-8">
+                    <p class="text-sm">Created by <a href="https://www.linkedin.com/in/padala-sai-midhun-reddy/">Midhun
+                            Reddy</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
